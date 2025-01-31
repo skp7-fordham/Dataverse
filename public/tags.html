@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVerse - Tags</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            display: flex;
+            justify-content: center; 
+            background-color: #034d82; 
+            color: white;
+            padding: 18px 30px;
+            box-sizing: border-box;
+            width: 100%; 
+            border-bottom: 1px solid #ccc; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 1000; 
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            max-width: 1200px; 
+            width: 100%; 
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 30px; /* space between cards */
+            margin-top: 60px; 
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .tag-card {
+            width: 200px;
+            height: 200px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Stack icon and text vertically */
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0077cc;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            margin-left: 80px;
+        }
+
+        .tag-card:hover {
+            transform: translateY(-10px);
+            color:rgb(36, 206, 33);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tag-card i {
+            font-size: 2em; /* Icon size */
+            color: #0077cc; /* Icon color */
+            margin-bottom: 10px; /* Space between icon and text */
+        }
+
+        .tag-card:hover i {
+            color: rgb(35, 196, 32); /* Change icon color on hover */
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: #0077cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+        .thin-line {
+            width: 1px; 
+            background-color: lightgrey; 
+            height: calc(100vh - 40px); 
+            margin: 20px; 
+        }
+
+        .container2 {
+            display: flex;
+            flex: 1; 
+            margin-top: 60px; 
+        }
+        .left-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px; 
+        }
+
+        .menu-item {
+            background: none;
+            border: none;
+            color: #0077cc; 
+            cursor: pointer;
+            text-align: left;
+            margin-bottom: 30px; /* Reduce margin to ensure it fits */
+            margin-left: 20px;
+            /*padding: 10px; Add padding for better clickable area */
+            font-size: 1em;
+            transition: color 0.4s ease, font-weight 0.3s ease; 
+            width: 100%; /* Ensure it takes the full width */
+        }
+
+        .menu-item:hover {
+            color: rgb(38, 184, 38); 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="title">Data Overflow - Tags</div>
+    </div>
+</header>
+
+<div class="container2">
+    <div class="left-menu">
+        <button class="menu-item" onclick="window.location.href='index.html'">🏠 Home</button>
+        <button class="menu-item" onclick="window.location.href='profile.html'">🙋‍♂️ Profile</button>
+        <button class="menu-item" onclick="window.location.href='question.html'">🔍 Question</button>
+        <button class="menu-item" onclick="window.location.href='tags.html'">🏷️ Tags</button>
+        <button class="menu-item" onclick="window.location.href='about.html'">🌐 About</button>
+    </div>
+
+    <div class="thin-line"></div>
+
+
+<div class="container">
+    <div class="tag-card" onclick="redirectToTagPage('machine-learning')">
+        <i class="fas fa-robot"></i> Machine Learning
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('deep-learning')">
+        <i class="fas fa-brain"></i> Deep Learning
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('big-data')">
+        <i class="fas fa-database"></i> Big Data
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('data-visualization')">
+        <i class="fas fa-chart-bar"></i> Data Visualization
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('statistics')">
+        <i class="fas fa-chart-line"></i> Statistics
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('data-mining')">
+        <i class="fa-solid fa-hammer"></i> Data Mining
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('nlp')">
+        <i class="fas fa-language"></i> NLP
+    </div>
+    <div class="tag-card" onclick="redirectToTagPage('artificial-intelligence')">
+        <i class="fas fa-balance-scale"></i> AI Ethics
+    </div>
+</div>
+
+<script>
+    // Function to redirect to the question page based on the clicked tag
+    function redirectToTagPage(tag) {
+        window.location.href = `/tags?tag=${tag}`; // Redirect to the page that lists questions with the selected tag
+    }
+</script>
+
+</body>
+</html>

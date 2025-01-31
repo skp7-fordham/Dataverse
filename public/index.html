@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVerse - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+        header {
+            display: flex;
+            justify-content: center; 
+            background-color: #034d82; 
+            color: white;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            width: 100%; 
+            border-bottom: 1px solid #ccc; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 1000; 
+        }
+        .header-content {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            max-width: 1200px; 
+            width: 100%; 
+        }
+        .container {
+            display: flex;
+            flex: 1; 
+            margin-top: 60px; 
+        }
+        .left-menu {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            margin: 20px; 
+        }
+        .menu-item {
+            background: none;
+            border: none;
+            color: #0077cc; 
+            cursor: pointer;
+            text-align: left;
+            margin-bottom: 30px; 
+            font-size: 1em;
+            transition: color 0.4s ease, font-weight 0.3s ease; 
+        }
+
+        .menu-item:hover {
+            color: rgb(38, 184, 38); 
+            font-weight: bold;
+        }
+        .title {
+            font-size: 1.5em;
+            margin-right: 20px; 
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+        .search-container {
+            margin: 0 10px; 
+        }
+        .search-bar {
+            width: 700px; 
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+        .button {
+            background-color: hsl(207, 89%, 41%);
+            color: #ffffff;
+            border: none;
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px; 
+            
+        }
+        .button:hover {
+            background-color: #025b9a;
+        }
+        .thin-line {
+            width: 1px; 
+            background-color: lightgrey; 
+            height: calc(100vh - 60px); 
+            margin: 20px; 
+        }
+        .content {
+            flex: 1; 
+            padding: 20px; 
+            display: flex;
+            flex-direction: column; 
+        }
+        .quote {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            background-color: #f5f5f5; 
+            border-radius: 4px; 
+            min-height: 200px; 
+        }
+        .quote img {
+            width: 400px; 
+            height: auto; 
+            margin-left: 20px; 
+        }
+        .quote-text {
+            font-size: 1.5em; 
+            margin: 0; 
+            color: #333; 
+            flex: 1; 
+        }
+        .question {
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            display: flex; 
+        }
+        .question img {
+            width: 100px; 
+            height: auto; 
+            margin-right: 15px; 
+        }
+        .question-title {
+            font-size: 1.2em; 
+            margin: 0; 
+        }
+        .question-description {
+            margin: 5px 0 0; 
+        }
+        footer {
+            background-color: black; 
+            color: white; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .footer-links {
+            margin: 10px 0; 
+        }
+        .footer-links a {
+            color: white; 
+            text-decoration: none; 
+            margin: 0 15px; 
+        }
+        .social-icons {
+            display: flex; 
+            margin-top: 10px;
+
+        }
+        .social-icons a {
+            margin: 0 10px; 
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="title">DataVerse</div>
+        <div class="controls">
+            <div id="user-controls" class="controls">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+            </div>
+            <button class="button" onclick="window.location.href='login.html'">Login</button>
+            <button class="button" onclick="window.location.href='register.html'">Sign Up</button>
+        </div>
+    </div>
+    </div>
+</header>
+
+
+<div class="container">
+    <div class="left-menu">
+        <button class="menu-item" onclick="window.location.href='index.html'">🏠 Home</button>
+        <button class="menu-item" onclick="window.location.href='profile.html'">🙋‍♂️ Profile</button>
+        <button class="menu-item" onclick="window.location.href='question.html'">🔍 Question</button>
+        <button class="menu-item" onclick="window.location.href='tags.html'">🏷️ Tags</button>
+        <button class="menu-item" onclick="window.location.href='about.html'">🌐 About</button>
+    </div>
+    <div class="thin-line"></div> 
+    <div class="content">
+        <!-- Quote Section -->
+        <div class="quote">
+            <p class="quote-text">"Have a question about data science? We're here to help you navigate the sea of information! Dive deep into the world of data and discover the answers you seek. No question is too big, and every answer brings you closer to clarity."</p>
+            <img src="https://cdn.sstatic.net/Img/home/illo-home-hero.png?v=4718e8f857c5" alt="Data Science Image">
+        </div>
+        
+        <div class="question">
+            <img src="https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D" alt="Question Image">
+            <div>
+                <h3 class="question-title">What are the best practices for handling large datasets?</h3>
+                <p class="question-description">Looking for strategies to efficiently manage large datasets in web applications.</p>
+            </div>
+        </div>
+        <div class="question">
+            <img src="https://datasciencedojo.com/wp-content/uploads/Data-Science-Communities-1-1.jpg.webp" alt="Question Image">
+            <div>
+                <h3 class="question-title">How can I improve performance in data-heavy applications?</h3>
+                <p class="question-description">Any tips on improving performance for applications dealing with a lot of data?</p>
+            </div>
+        </div>
+        <div class="question">
+            <img src="https://media.licdn.com/dms/image/v2/C5612AQHyT-K1VzTPIA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1571038882397?e=1736380800&v=beta&t=VlfwAT9lUvv2gsK2L7yUnjAz5n8zffHp-o_MJgQIis4" alt="Question Image">
+            <div>
+                <h3 class="question-title">What tools can help visualize large datasets?</h3>
+                <p class="question-description">Seeking recommendations for tools to visualize complex data effectively.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        
+        <button class="menu-item" style="color: white; margin-bottom: 5px;"> Questions</button>
+        
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank">
+            Facebook
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            Twitter
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            Instagram
+        </a>
+    </div>
+</footer>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userControls = document.getElementById('user-controls');
+        
+        try {
+            // Check session by calling the server
+            const response = await fetch('/session'); 
+            const result = await response.json();
+
+            userControls.innerHTML = ''; 
+
+            if (result.loggedIn) {
+                
+                userControls.innerHTML = `
+                     <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Search...">
+                    </div>
+                    <span class="user-name">Hello, ${result.user.name}!</span>
+                    
+                    <button class="button" onclick="logout()">Logout</button>
+                `;
+            } else {
+                // User is not logged in, show login and sign-up buttons
+                userControls.innerHTML = `
+                    <button class="button" onclick="window.location.href='login.html'">Login</button>
+                    <button class="button" onclick="window.location.href='register.html'">Sign Up</button>
+                `;
+            }
+        } catch (err) {
+            console.error('Error fetching session data:', err);
+            userControls.innerHTML = `
+                <button class="button" onclick="window.location.href='login.html'">Login</button>
+                <button class="button" onclick="window.location.href='register.html'">Sign Up</button>
+            `;
+        }
+    });
+
+    // Logout function
+    async function logout() {
+        try {
+            await fetch('/logout', { method: 'POST' }); // Server endpoint for logout
+            window.location.reload(); // Reload the page to update the header
+        } catch (err) {
+            console.error('Error logging out:', err);
+        }
+    }
+</script>
+</body>
+</html>

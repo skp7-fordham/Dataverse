@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVerse - Profile</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+        header {
+            display: flex;
+            justify-content: center; 
+            background-color: #034d82; 
+            color: white;
+            
+            box-sizing: border-box;
+            width: 100%; 
+            border-bottom: 1px solid #ccc; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 1000; 
+        }
+        .header-content {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            max-width: 1200px; 
+            
+            width: 100%; 
+        }
+        .header-content h1 {
+            font-size: 1.5em; /* Adjust the font size */
+            margin: 5px; /* Remove margin */
+            padding: 9px; /* Remove padding */
+        }
+        .container {
+            display: flex;
+            flex: 1; 
+            margin-top: 60px; 
+        }
+        .left-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px; 
+        }
+
+        .menu-item {
+            background: none;
+            border: none;
+            color: #0077cc; 
+            cursor: pointer;
+            text-align: left;
+            margin-bottom: 30px; /* Reduce margin to ensure it fits */
+            margin-left: 20px;
+            /*padding: 10px; Add padding for better clickable area */
+            font-size: 1em;
+            transition: color 0.4s ease, font-weight 0.3s ease; 
+            width: 100%; /* Ensure it takes the full width */
+        }
+
+        .menu-item:hover {
+            color: rgb(38, 184, 38); 
+            font-weight: bold;
+        }
+        .content {
+            flex: 1; 
+            padding: 20px; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .profile-section {
+            width: 100%;
+            max-width: 600px; /* Limit width for better appearance */
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .profile-card {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .profile-pic {
+            width: 100px; /* Adjust the size as necessary */
+            height: 100px; /* Adjust the size as necessary */
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .profile-info {
+            flex: 1;
+        }
+        .profile-info h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #034d82; /* Match header color */
+        }
+        .profile-info .title {
+            font-size: 1.2em;
+            color: #0077cc; /* Match menu item color */
+        }
+        .profile-info .description {
+            margin: 10px 0;
+            color: #666; /* Slightly lighter color for description */
+        }
+        .contact-info {
+            margin-top: 10px;
+            padding: 55px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            width: 37%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info h4 {
+            margin-top: 0;
+            color: #034d82; /* Match header color */
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            margin: 0 10px; 
+            text-decoration: none;
+            color: #0077cc; /* Match menu item color */
+            font-size: 1.5em;
+        }
+        .footer {
+            background-color: black; 
+            color: white; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .footer-links {
+            margin: 10px 0; 
+        }
+        .footer-links a {
+            color: white; 
+            text-decoration: none; 
+            margin: 0 15px; 
+        }
+        .thin-line {
+            width: 1px; 
+            background-color: lightgrey; 
+            height: calc(100vh - 40px); 
+            margin: 20px; 
+        }
+
+        footer {
+            background-color: black; 
+            color: white; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .footer-links {
+            margin: 10px 0; 
+        }
+        .footer-links a {
+            color: white; 
+            text-decoration: none; 
+            margin: 0 15px; 
+        }
+        .social-icons {
+            display: flex; 
+            margin-top: 10px;
+
+        }
+        .social-icons a {
+            margin: 0 10px; 
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: center; 
+            background-color: #034d82; 
+            color: white;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            width: 100%; 
+            border-bottom: 1px solid #ccc; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 1000; 
+        }
+        .header-content {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            max-width: 1200px; 
+            width: 100%; 
+        }
+
+        .title {
+            font-size: 1.5em;
+            margin-right: 20px; 
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+        .search-container {
+            margin: 0 10px; 
+        }
+        .search-bar {
+            width: 700px; 
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+        .button {
+            background-color: hsl(207, 89%, 41%);
+            color: #ffffff;
+            border: none;
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px; 
+            
+        }
+        .button:hover {
+            background-color: #025b9a;
+        }
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="header-content">
+            <h1>User Profile</h1>
+        </div>
+    </header> -->
+
+    <header>
+        <div class="header-content">
+            <div class="title">DataVerse</div>
+            <div class="controls">
+                <div id="user-controls" class="controls">
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search...">
+                </div>
+                <button class="button" onclick="window.location.href='login.html'">Login</button>
+                <button class="button" onclick="window.location.href='register.html'">Sign Up</button>
+            </div>
+        </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="left-menu">
+            <button class="menu-item" onclick="window.location.href='index.html'">🏠 Home</button>
+            <button class="menu-item" onclick="window.location.href='profile.html'">🙋‍♂️ Profile</button>
+            <button class="menu-item" onclick="window.location.href='question.html'">🔍 Question</button>
+            <button class="menu-item" onclick="window.location.href='tags.html'">🏷️ Tags</button>
+            <button class="menu-item" onclick="window.location.href='about.html'">🌐 About</button>
+        </div>
+        <div class="thin-line"></div>
+        <div class="content">
+            <div class="profile-section">
+                <h2 style="color:rgb(120, 122, 120)">Profile Info</h2>
+                <div class="profile-card">
+                    <img src="/img/login-background.jpg" alt="Profile Picture" class="profile-pic">
+                    <div class="profile-info">
+                        <h3 id="user-name"></h3>
+                        <p class="email" id="user-email"></p>
+                        <p class="bio" id="user-bio">
+                            Passionate about unraveling complex patterns and extracting meaningful insights from data.
+                            Proficient in machine learning, data analysis, and web development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h4>Helpdesk Contact Information</h4>
+                <p>Email: admin@dataverse.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <p>Location: New York, USA</p>
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            
+            <button class="menu-item" style="color: white; margin-bottom: 5px;"> Questions</button>
+            
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                Facebook
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                Twitter
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                Instagram
+            </a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const userControls = document.getElementById('user-controls');
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch session information
+                const response = await fetch('/session'); // Replace with your actual session endpoint
+                const result = await response.json();
+
+                if (result.loggedIn) {
+                    // Update the profile information dynamically
+                    document.getElementById('user-name').innerText = result.user.name || 'N/A';
+                    
+                    document.getElementById('user-email').innerText = result.user.email || 'N/A';
+                    userControls.innerHTML = `
+                     <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Search...">
+                    </div>
+                    <span class="user-name">Hello, ${result.user.name}!</span>
+                    
+                    <button class="button" onclick="logout()">Logout</button>
+                `;
+                } else {
+                    // Redirect to login if the user is not logged in
+                    alert("Please log in to see profile.");
+                    window.location.href = 'index.html';
+                    // window.location.href = 'login.html';
+                    userControls.innerHTML = `
+                    <button class="button" onclick="window.location.href='login.html'">Login</button>
+                    <button class="button" onclick="window.location.href='register.html'">Sign Up</button>
+                `;
+                }
+            } catch (err) {
+                console.error('Error fetching session data:', err);
+                userControls.innerHTML = `
+                <button class="button" onclick="window.location.href='login.html'">Login</button>
+                <button class="button" onclick="window.location.href='register.html'">Sign Up</button>
+            `;
+            }
+        });
+
+// Logout function
+async function logout() {
+        try {
+            await fetch('/logout', { method: 'POST' }); // Server endpoint for logout
+            window.location.reload(); // Reload the page to update the header
+        } catch (err) {
+            console.error('Error logging out:', err);
+        }
+    }
+
+    </script>
+</body>
+</html>
